@@ -31,7 +31,6 @@ func (c *courseService) GetCourse(courseID int64) (*dto.Course, error) {
 		Title:       course.Title,
 		Description: course.Description,
 		Price:       course.Price,
-		UserID:      course.UserID,
 	}
 
 	return &fullCourse, nil

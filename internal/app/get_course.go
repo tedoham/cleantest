@@ -10,7 +10,10 @@ func (m *MicroserviceServer) GetCourse(ctx context.Context, req *desc.GetCourseR
 		return nil, err
 	}
 
-	return &desc.GetCourseResponse{Id: course.ID, UserId: course.UserID,
-		Title: course.Title, Description: course.Description,
-		Price: course.Price}, nil
+	return &desc.GetCourseResponse{
+		Id:          course.ID,
+		Title:       course.Title,
+		Description: course.Description,
+		Price:       course.Price,
+	}, nil
 }
