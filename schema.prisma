@@ -1,0 +1,21 @@
+datasource db {
+    // could be postgresql or mysql
+    provider = "sqlite"
+    url      = "file:dev.db"
+}
+
+generator db {
+    provider = "go run github.com/prisma/prisma-client-go"
+    // set the output folder and package name
+    output           = "./internal/repository"
+    package          = "repository"
+}
+
+model Course {
+    id              String   @default(cuid()) @id
+    title           String
+    description     String
+    price           Int
+    createdAt       DateTime @default(now())
+    updatedAt       DateTime @updatedAt
+}
